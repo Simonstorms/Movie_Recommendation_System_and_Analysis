@@ -1,0 +1,8 @@
+.idea/*
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/movie_recommendation_system  .iml
+.idea/vcs.xml
+movie_dataset/.DS_Store
