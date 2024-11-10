@@ -2,7 +2,7 @@
 **Creator**: Simon Gneuß  
 **Enrollment Number**: 23.01.038
 
-![image](https://github.com/user-attachments/assets/f61829e6-3b7d-43f3-8c1f-15604ab237f6)
+![image](https://github.com/user-attachments/assets/13b17921-540a-4f8f-a643-7c4776979b25)
 
 ## Overview
 This repository showcases an exploration of a movie dataset and a machine learning-based movie recommendation system. The project includes:
