@@ -33,7 +33,7 @@ Sourced from [Kaggle](https://www.kaggle.com/datasets/gsimonx37/letterboxd/data)
 
 ---
 
-### Some key Visuals and Insights
+### Some key visual examples
 
 #### 1. Genre Distribution
 ![output](https://github.com/user-attachments/assets/1370deb5-7d6d-4f30-82df-59750542ae70)
