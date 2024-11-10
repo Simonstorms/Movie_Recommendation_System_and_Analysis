@@ -29,12 +29,9 @@ Sourced from [Kaggle](https://www.kaggle.com/datasets/gsimonx37/letterboxd/data)
 - **Movies**
 - **Themes**
 
-### Data Quality
-The dataset required minimal cleaning, with only minor missing values after merging.
-
 ---
 
-### Visuals and Insights
+### Some key Visuals and Insights
 
 #### 1. Genre Distribution
 ![output](https://github.com/user-attachments/assets/1370deb5-7d6d-4f30-82df-59750542ae70)
@@ -45,16 +42,8 @@ The dataset required minimal cleaning, with only minor missing values after merg
 <img width="1020" alt="Screenshot 2024-11-10 at 13 58 38" src="https://github.com/user-attachments/assets/25ac6f9b-22d5-476d-9cee-8a419649d6f2">
 
 
-**Insights**:
-- Significant growth observed in **[specific years]**.
-- Total movies: ~1m.
-
-
 #### 3. Actor Analysis
 <img width="986" alt="Screenshot 2024-11-10 at 13 58 23" src="https://github.com/user-attachments/assets/1d41b4bf-9250-42be-871a-4319e4e2199f">
-
-**Insights**:
-- **hhh**.
 
 ---
 
