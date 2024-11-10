@@ -37,38 +37,24 @@ The dataset required minimal cleaning, with only minor missing values after merg
 ### Visuals and Insights
 
 #### 1. Genre Distribution
-*Screenshot: Bar plot of top 15 movie genres.*
+![output](https://github.com/user-attachments/assets/1370deb5-7d6d-4f30-82df-59750542ae70)
 
-**Insights**:
-- Contains **X** unique genres.
-- Top 5 genres: **A, B, C, D, E**.
+
 
 #### 2. Movie Release Trends
-*Screenshot: Bar chart of movies released each year.*
+<img width="1020" alt="Screenshot 2024-11-10 at 13 58 38" src="https://github.com/user-attachments/assets/25ac6f9b-22d5-476d-9cee-8a419649d6f2">
+
 
 **Insights**:
 - Significant growth observed in **[specific years]**.
-- Total movies: **[total count]**.
+- Total movies: ~1m.
 
-#### 3. Rating Distribution
-*Screenshot: Histogram of rating distribution.*
 
-**Insights**:
-- Average rating: **[average]**, median: **[median]**.
-
-#### 4. Duration vs. Rating Correlation
-*Screenshot: Heatmap of movie duration vs. ratings.*
+#### 3. Actor Analysis
+<img width="986" alt="Screenshot 2024-11-10 at 13 58 23" src="https://github.com/user-attachments/assets/1d41b4bf-9250-42be-871a-4319e4e2199f">
 
 **Insights**:
-- Most movies are **60-160 minutes**.
-- Certain durations correlate with higher ratings.
-
-#### 5. Actor Analysis
-*Screenshots: Bar plot of top 20 actors, violin plot for ratings of known actors.*
-
-**Insights**:
-- **Top 5 actors**: **Actor A, B, C, D, E**.
-- Fun fact: Mel Blanc voiced characters like Bugs Bunny and Daffy Duck.
+- **hhh**.
 
 ---
 
@@ -80,7 +66,6 @@ This analysis highlights:
 
 This serves as a strong base for building a recommendation system.
 
-*Add final results or key plot screenshots where noted.*
 
 ---
 
