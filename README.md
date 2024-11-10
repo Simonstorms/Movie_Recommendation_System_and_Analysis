@@ -1,5 +1,5 @@
 # Movie Dataset Analysis and Movie Recommendation System
-### Creator: Simon Gneuß  
+**Creator**: Simon Gneuß  
 **Enrollment Number**: 23.01.038
 
 ## Overview
