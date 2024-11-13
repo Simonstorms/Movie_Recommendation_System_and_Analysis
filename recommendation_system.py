@@ -66,8 +66,8 @@ class MovieRecommender:
         movies = movies.dropna(subset=['rating'])
         numeric_columns = movies.select_dtypes(include=['float64', 'int64']).columns
         string_columns = movies.select_dtypes(include=['object']).columns
-        movies[numeric_columns] = movies[numeric_columns].fillna(0)
-        movies[string_columns] = movies[string_columns].fillna('')
+        movies.loc[:, numeric_columns] = movies[numeric_columns].fillna(0)
+        movies.loc[:, string_columns] = movies[string_columns].fillna('')
         return movies
     
     def build_feature_matrices(self):
