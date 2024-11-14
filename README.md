@@ -123,6 +123,57 @@ python recommendation_system.py
 
 ## Part 3: Score Prediction Model
 
+### Overview
+A machine learning model that predicts movie ratings based on various features including genres, themes, actors, directors, and descriptions using Random Forest Regression.
+
+### Key Features
+- Content-based prediction using multiple movie attributes
+- TF-IDF vectorization for text processing
+- Integration with movie metadata
+- Rating predictions on a 1-5 scale
+
+### Technical Implementation
+
+#### Core Components
+1. **Feature Processing**
+   - Movies metadata (genres, themes, actors)
+   - Text content (descriptions, taglines)
+   - Release dates and duration
+   - Numerical feature scaling
+
+2. **Model Architecture**
+   - Random Forest Regressor with:
+     - 500 trees
+     - Max depth of 25
+     - Minimum samples split of 5
+     - Minimum samples leaf of 2
+
+### Performance
+- R² Score: 0.34
+- 87% of predictions within 0.5 stars
+- 98.8% of predictions within 1.0 stars
+
+### Model Insights
+
+**Strengths**: Good at handling both numerical and categorical features
+
+**Limitations**: Struggles with extreme ratings
+
+### Future Improvements
+
+1. **Model Optimization**
+   - Experiment with different algorithms (XGBoost, LightGBM)
+   - Fine-tune hyperparameters further
+
+2. **Data Enhancement**
+   - Add box office and budget information
+   - Expand the dataset with more rated movies
+
+3. **Data Quality**
+   - Improve missing value handling
+   - Balance rating distribution
+
+
 ---
 
 **Note**: Explore the repository for more details, data, and code. Feel free to contribute or raise issues.
