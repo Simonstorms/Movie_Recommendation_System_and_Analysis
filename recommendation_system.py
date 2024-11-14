@@ -1,4 +1,4 @@
-from typing import List, Dict, Set, Tuple, Optional, Union
+from typing import List, Dict, Set, Tuple, Optional
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
