@@ -11,8 +11,8 @@ class MovieRecommender:
     """
     
     # Constants for ratings
-    MIN_RATING = 2.5
-    RATING_SCALE = 2.5
+    MIN_RATING = 2
+    RATING_SCALE = 2
     
     def __init__(self):
         self.movies_df = None
