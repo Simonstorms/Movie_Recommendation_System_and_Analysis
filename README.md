@@ -1,5 +1,5 @@
 # Movie Dataset Analysis and Movie Recommendation System
-**Creator**: Simon Gneuß  
+**Creator**: Simon Gneuß
 **Enrollment Number**: 23.01.038
 
 ![image](https://github.com/user-attachments/assets/13b17921-540a-4f8f-a643-7c4776979b25)
@@ -8,7 +8,9 @@
 This repository showcases an exploration of a movie dataset and a machine learning-based movie recommendation system. The project includes:
 
 1. **Movie Dataset Analysis**: Insights into genres, trends, ratings, and actors.
-2. **Movie Recommendation System**: A machine learning model to suggest movies based on user preferences.
+2. **Movie Recommendation System**: A content-based movie recommendation system that generates recommendations
+    based on movie features including genres, themes, actors, and more.
+3. **Score Prediction**: A model that predicts movie ratings based on features such as genres, themes, and actors.
 
 ---
 
@@ -60,7 +62,66 @@ This serves as a strong base for building a recommendation system.
 
 ---
 
-Stay tuned for **Part 2**, detailing the movie recommendation model.
+## Part 2: Movie Recommendation System
+
+### Overview
+A content-based movie recommendation system that analyzes movie features including genres, themes, actors, and descriptions to provide personalized recommendations.
+
+### Key Features
+- Content-based filtering using multiple movie attributes
+- TF-IDF vectorization for text processing
+- Personalized user profiles based on ratings
+- Fast recommendation generation
+
+### Technical Implementation
+
+#### Core Components
+1. **Feature Processing**
+   - Movies metadata (genres, themes, actors)
+   - Text content (descriptions, taglines)
+   - User ratings integration
+
+2. **Adding your own Recommendations**
+    - Add your own movies + ratings to generate personalized recommendations
+
+```python
+# Example usage
+user_ratings = pd.DataFrame({
+    'name': ['Dune: Part Two', 'Oppenheimer', 'Interstellar'],
+    'rating': [5, 5, 5]
+})
+```
+
+### Performance
+- Average response time: 30 seconds
+- Recommendations based on content similarity
+
+### Setup and Usage
+
+1. **Installation**
+```bash
+git clone https://github.com/yourusername/movie_recommendation_system.git
+cd movie_recommendation_system
+```
+
+2. **Install Dependencies**
+- pandas
+- numpy
+- scikit-learn
+- scipy
+
+3. **Run System**
+```bash
+python recommendation_system.py
+```
+
+### Future Improvements
+- Use my dowloaded Letterboxd data to recommend movies for my profile
+- Include more movie metadata, such as directors, writers, and studios
+
+---
+
+## Part 3: Score Prediction Model
 
 ---
 
@@ -70,4 +131,3 @@ Stay tuned for **Part 2**, detailing the movie recommendation model.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
-
