@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
+from scipy.optimize import minimize
 
 class MovieRecommender:
     """
@@ -18,6 +19,7 @@ class MovieRecommender:
         self.movies_df = None
         self.tfidf_matrices = {}
         self.features = ['genre', 'theme', 'actors', 'description', 'tagline', 'director']
+        self.feature_weights = {feature: 1.0 for feature in self.features}
 
     def load_data(self):
         """Load all necessary datasets"""
@@ -83,15 +85,67 @@ class MovieRecommender:
 
     def _calculate_weighted_profiles(self, user_movies):
         """Calculate weighted profiles for user movies"""
-        return hstack([
-            self.tfidf_matrices[feature][user_movies['row_index']]
+        feature_matrices = [
+            self.tfidf_matrices[feature][user_movies['row_index']].multiply(self.feature_weights[feature])
             for feature in self.features
-        ]).multiply(((user_movies['rating'] - self.MIN_RATING) / self.RATING_SCALE).values.reshape(-1, 1))
+        ]
+        weighted_profiles = hstack(feature_matrices)
+        adjusted_ratings = ((user_movies['rating'] - self.MIN_RATING) / self.RATING_SCALE).values.reshape(-1, 1)
+        weighted_profiles = weighted_profiles.multiply(adjusted_ratings)
+        return weighted_profiles
 
     def _normalize_profile(self, weighted_profiles):
         """Normalize the user profile"""
-        return np.asarray(weighted_profiles.sum(axis=0).flatten() /
-                         np.linalg.norm(weighted_profiles.sum(axis=0).flatten()))[0]
+        profile_sum = weighted_profiles.sum(axis=0)
+        norm = np.linalg.norm(profile_sum)
+        if norm == 0:
+            return np.zeros(profile_sum.shape[1])
+        return np.asarray(profile_sum / norm)[0]
+
+    def _error_function(self, weights, user_movies):
+        """Compute the error between predicted scores and actual ratings"""
+        self.feature_weights = dict(zip(self.features, weights))
+
+        errors = []
+        for idx, row in user_movies.iterrows():
+            other_movies = user_movies[user_movies.index != idx]
+            if other_movies.empty:
+                continue
+
+            user_profile = self.create_user_profile(other_movies)
+
+            feature_vectors = [
+                self.tfidf_matrices[feature][row['row_index']].multiply(self.feature_weights[feature])
+                for feature in self.features
+            ]
+            movie_vector = hstack(feature_vectors)
+            movie_vector = movie_vector.toarray()
+
+            similarity = cosine_similarity(user_profile.reshape(1, -1), movie_vector).flatten()[0]
+
+            predicted_rating = similarity * self.RATING_SCALE + self.MIN_RATING
+
+            actual_rating = row['rating']
+            error = (predicted_rating - actual_rating) ** 2
+            errors.append(error)
+
+        return sum(errors)
+
+    def optimize_feature_weights(self, user_movies):
+        """Optimize feature weights to minimize prediction error"""
+        initial_weights = [1.0] * len(self.features)
+        bounds = [(0, None)] * len(self.features)
+
+        result = minimize(
+            self._error_function,
+            initial_weights,
+            args=(user_movies,),
+            bounds=bounds,
+            method='L-BFGS-B'
+        )
+
+        self.feature_weights = dict(zip(self.features, result.x))
+        print("Optimized feature weights:", self.feature_weights)
 
     def get_recommendations(self, user_ratings, n=10):
         """Generate movie recommendations based on user ratings"""
@@ -101,9 +155,15 @@ class MovieRecommender:
             lambda x: self.movies_df[self.movies_df['name'] == x].index[0]
         )
 
+        # Optimize feature weights
+        self.optimize_feature_weights(user_movies)
+
         # Generate recommendations
         user_profile = self.create_user_profile(user_movies)
-        tfidf_matrix_combined = hstack([self.tfidf_matrices[feature] for feature in self.features])
+        tfidf_matrix_combined = hstack([
+            self.tfidf_matrices[feature].multiply(self.feature_weights[feature])
+            for feature in self.features
+        ])
         similarity_scores = cosine_similarity(
             user_profile.reshape(1, -1),
             tfidf_matrix_combined
