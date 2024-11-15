@@ -152,7 +152,7 @@ A machine learning model that predicts movie ratings based on various features i
 - R² Score: 0.34
 - 87% of predictions within 0.5 stars
 - 98.8% of predictions within 1.0 stars
-  
+
 <img width="406" alt="Screenshot 2024-11-14 at 19 13 57" src="https://github.com/user-attachments/assets/ed0591fd-8dad-4a8b-acc0-39b71f91fab5">
 
 
@@ -184,4 +184,6 @@ A machine learning model that predicts movie ratings based on various features i
 ---
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [![MIT Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+.
