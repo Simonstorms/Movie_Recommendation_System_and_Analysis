@@ -139,7 +139,7 @@ if __name__ == "__main__":
     # Example user ratings
     user_ratings = pd.DataFrame({
         'name': ['Dune: Part Two', 'Oppenheimer', 'Interstellar', "Rio 2", "Noelle"],
-        'rating': [5, 5, 5, 2.5, 3]
+        'rating': [5, 5, 5 , 2.5, 5]
     })
 
     recommendations = recommender.get_recommendations(user_ratings)
