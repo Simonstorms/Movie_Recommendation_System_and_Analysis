@@ -12,6 +12,7 @@ This repository showcases an exploration of a movie dataset and a machine learni
     based on movie features including genres, themes, actors, and more.
 3. **Score Prediction**: A model that predicts movie ratings based on features such as genres, themes, and actors.
 
+4. **Calculus Improved Predictions**: Incorporating calculus-inspired feature engineering techniques to enhance prediction accuracy**
 
 ---
 
@@ -184,7 +185,43 @@ A machine learning model that predicts movie ratings based on various features i
 
 ---
 
-## Part 4: Calculus Improved Predections
+## Part 4: Calculus Improved Predictions
+
+### Overview
+This section implements advanced mathematical techniques to enhance the movie rating prediction model, improving upon the Random Forest Regressor from Part 3 by incorporating calculus-inspired features and gradient boosting.
+
+### Key Improvements
+- **Calculus-Inspired Features**:
+  - Logarithmic transformations (`log_minute`)
+  - Polynomial features (`minute_squared`)
+  - Normalization techniques
+  - Cosine similarity metrics for genre analysis
+
+- **Enhanced Model Architecture**:
+  - Gradient Boosting Regressor instead of Random Forest
+  - Polynomial feature expansion (degree 2)
+  - TF-IDF vectorization with SVD dimensionality reduction
+  - Stratified data splitting based on rating distribution
+
+### Performance Gains
+- R² Score: Improved from 0.34 to 0.39 (+14.7%)
+- Prediction Accuracy:
+  - Within 0.5 stars: Increased to 91% (from 87%)
+  - Within 1.0 stars: Increased to 99.3% (from 98.8%)
+
+### Technical Implementation
+The improved model applies calculus concepts through:
+1. **Non-linear transformations** of time-based features
+2. **Similarity metrics** for content comparison
+3. **Dimensional analysis** using SVD
+4. **Feature normalization** using standardization
+
+### Future Directions
+- Incorporate additional calculus-inspired feature engineering techniques
+- Experiment with neural network architectures
+- Explore time-series analysis for release date impact
+
+
 ---
 
 **Note**: Explore the repository for more details, data, and code. Feel free to contribute or raise issues.
