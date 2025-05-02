@@ -9,3 +9,4 @@ movie_dataset/.DS_Store
 .DS_Store
 .ipynb_checkpoints/main-checkpoint.ipynb
 .ipynb_checkpoints/main-checkpoint.ipynb
+__pycache__

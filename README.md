@@ -12,6 +12,11 @@ This repository showcases an exploration of a movie dataset and a machine learni
     based on movie features including genres, themes, actors, and more.
 3. **Score Prediction**: A model that predicts movie ratings based on features such as genres, themes, and actors.
 
+
+---
+
+**Note**: Explore the repository for more details, data, and code. Feel free to contribute or raise issues.
+
 ---
 
 ## Part 1: Movie Dataset Analysis
@@ -179,11 +184,12 @@ A machine learning model that predicts movie ratings based on various features i
 
 ---
 
+## Part 4: Calculus Improved Predections
+---
+
 **Note**: Explore the repository for more details, data, and code. Feel free to contribute or raise issues.
 
 ---
 
 ## License
 This project is licensed under the [![MIT Licence](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-.
