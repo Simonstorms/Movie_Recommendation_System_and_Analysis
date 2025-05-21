@@ -48,7 +48,6 @@ def merge_datasets(movies, actors, genres, themes, crew):
     movies[numeric_columns] = movies[numeric_columns].fillna(0)
     movies[string_columns] = movies[string_columns].fillna('')
 
-    # Add calculus-inspired features
     movies['log_minute'] = np.log1p(movies['minute'])
     movies['minute_squared'] = movies['minute'] ** 2
 
